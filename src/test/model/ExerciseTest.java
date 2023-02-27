@@ -20,6 +20,7 @@ public class ExerciseTest {
     @BeforeEach
 
     public void runBefore() {
+
         exercise1 = new Exercise("Bench Press", "Chest", 3, 15);
         exercise2 = new Exercise("Dead lift", "Back", 4, 10);
         exercise3 = new Exercise("Hammer Curl", "Arms", 3, 13);
@@ -35,8 +36,42 @@ public class ExerciseTest {
     @Test
 
     public void testGetTitle() {
+
         assertEquals("Bench Press", exercise1.getTitle());
         assertEquals("Leg Press", exercise6.getTitle());
         assertEquals("Hammer Curl", exercise3.getTitle());
+
     }
+
+    @Test
+
+    public void testGetMuscleGroup() {
+
+        assertEquals("Chest", exercise1.getMuscleGroup());
+        assertEquals("Legs", exercise6.getMuscleGroup());
+        assertEquals("Arms", exercise3.getMuscleGroup());
+
+    }
+
+    @Test
+
+    public void testGetSets() {
+
+        assertEquals(3, exercise1.getSets());
+        assertEquals(5, exercise6.getSets());
+        assertEquals(4, exercise4.getSets());
+
+    }
+
+    @Test
+
+    public void testGetRepetitions() {
+
+        assertEquals(10, exercise5.getRepetitions());
+        assertEquals(8, exercise6.getRepetitions());
+        assertEquals(12, exercise7.getRepetitions());
+
+    }
+
+
 }

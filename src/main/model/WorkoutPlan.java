@@ -110,45 +110,45 @@ public class WorkoutPlan {
         return armsWorkoutPlan;
     }
 
-//
-//    public boolean containChestExercise(String s) {
-//        for (Exercise e : chestWorkoutPlan) {
-//            if (e.getTitle().equals(s)) {
-//
-//                return true;
-//            }
-//        }
-//
-//        return false;
-//    }
-//
-//
-//    public boolean containBackExercise(String s) {
-//        for (Exercise e : backWorkoutPlan) {
-//            if (e.getTitle().equals(s)) {
-//
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-//
-//
-//    public boolean containArmsExercise(String s) {
-//        for (Exercise e : armsWorkoutPlan) {
-//            if (e.getTitle().equals(s)) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-//
-//    public boolean containLegsExercise(String s) {
-//        for (Exercise e : legsWorkoutPlan) {
-//            if (e.getTitle().equals(s)) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+
+    public boolean containChestExercise(String s) {
+        for (Exercise e : chestWorkoutPlan) {
+            if (e.getTitle().equals(s)) {
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    public boolean containBackExercise(String s) {
+        for (Exercise e : backWorkoutPlan) {
+            if (e.getTitle().equals(s)) {
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean containArmsExercise(String s) {
+        for (Exercise e : armsWorkoutPlan) {
+            if (e.getTitle().equals(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean containLegsExercise(String s) {
+        for (Exercise e : legsWorkoutPlan) {
+            if (e.getTitle().equals(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
