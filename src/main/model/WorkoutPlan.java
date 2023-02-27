@@ -12,7 +12,6 @@ public class WorkoutPlan {
     private List<Exercise> armsWorkoutPlan;
 
 
-
     public WorkoutPlan() {
         backWorkoutPlan = new ArrayList<>();
         chestWorkoutPlan = new ArrayList<>();
@@ -69,7 +68,6 @@ public class WorkoutPlan {
         armsWorkoutPlan.remove(exercise);
 
     }
-
 
 
     public int chestWorkoutPlanSize() {

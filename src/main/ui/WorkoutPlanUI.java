@@ -358,7 +358,6 @@ public class WorkoutPlanUI {
     }
 
 
-
     //MODIFIES: This
     private void viewArmsWorkoutPlan() {
         if (!workoutPlan.getArmsWorkoutPlan().isEmpty()) {

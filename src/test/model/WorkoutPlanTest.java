@@ -31,73 +31,73 @@ public class WorkoutPlanTest {
 
     }
 
-        @Test
-        public void testAddBackWorkoutPlan() {
+    @Test
+    public void testAddBackWorkoutPlan() {
 
-            workoutPlan.addBackWorkoutPlan(exercise2);
-            assertEquals(1,workoutPlan.backWorkoutPlanSize());
-            workoutPlan.addBackWorkoutPlan(exercise4);
-            assertEquals(2,workoutPlan.backWorkoutPlanSize());
+        workoutPlan.addBackWorkoutPlan(exercise2);
+        assertEquals(1, workoutPlan.backWorkoutPlanSize());
+        workoutPlan.addBackWorkoutPlan(exercise4);
+        assertEquals(2, workoutPlan.backWorkoutPlanSize());
 
-        }
+    }
 
-        @Test
-        public void testAddChestWorkoutPlan() {
+    @Test
+    public void testAddChestWorkoutPlan() {
 
         workoutPlan.addChestWorkoutPlan(exercise1);
-        assertEquals(1,workoutPlan.chestWorkoutPlanSize());
+        assertEquals(1, workoutPlan.chestWorkoutPlanSize());
         workoutPlan.addChestWorkoutPlan(exercise1);
-        assertEquals(2,workoutPlan.chestWorkoutPlanSize());
+        assertEquals(2, workoutPlan.chestWorkoutPlanSize());
 
-        }
+    }
 
-        @Test
-        public void testAddLegsWorkoutPlan() {
+    @Test
+    public void testAddLegsWorkoutPlan() {
 
-            workoutPlan.addLegsWorkoutPlan(exercise6);
-            assertEquals(1,workoutPlan.legsWorkoutPlanSize());
-            workoutPlan.addLegsWorkoutPlan(exercise7);
-            assertEquals(2,workoutPlan.legsWorkoutPlanSize());
-            workoutPlan.addLegsWorkoutPlan(exercise3);
-            assertEquals(2,workoutPlan.legsWorkoutPlanSize());
+        workoutPlan.addLegsWorkoutPlan(exercise6);
+        assertEquals(1, workoutPlan.legsWorkoutPlanSize());
+        workoutPlan.addLegsWorkoutPlan(exercise7);
+        assertEquals(2, workoutPlan.legsWorkoutPlanSize());
+        workoutPlan.addLegsWorkoutPlan(exercise3);
+        assertEquals(2, workoutPlan.legsWorkoutPlanSize());
 
-        }
+    }
 
     @Test
     public void testAddArmsWorkoutPlan() {
 
         workoutPlan.addArmsWorkoutPlan(exercise3);
-        assertEquals(1,workoutPlan.armsWorkoutPlanSize());
+        assertEquals(1, workoutPlan.armsWorkoutPlanSize());
         workoutPlan.addArmsWorkoutPlan(exercise5);
-        assertEquals(2,workoutPlan.armsWorkoutPlanSize());
+        assertEquals(2, workoutPlan.armsWorkoutPlanSize());
         workoutPlan.addArmsWorkoutPlan(exercise7);
-        assertEquals(2,workoutPlan.armsWorkoutPlanSize());
+        assertEquals(2, workoutPlan.armsWorkoutPlanSize());
 
     }
 
-        @Test
-        public void testDeleteArmsWorkoutPlan() {
+    @Test
+    public void testDeleteArmsWorkoutPlan() {
 
-            assertEquals(0, workoutPlan.armsWorkoutPlanSize());
-            workoutPlan.addArmsWorkoutPlan(exercise3);
-            assertEquals(1,workoutPlan.armsWorkoutPlanSize());
-            workoutPlan.addArmsWorkoutPlan(exercise5);
-            assertEquals(2,workoutPlan.armsWorkoutPlanSize());
-            workoutPlan.deleteArmsWorkoutPlan(exercise5);
-            assertEquals(1,workoutPlan.armsWorkoutPlanSize());
+        assertEquals(0, workoutPlan.armsWorkoutPlanSize());
+        workoutPlan.addArmsWorkoutPlan(exercise3);
+        assertEquals(1, workoutPlan.armsWorkoutPlanSize());
+        workoutPlan.addArmsWorkoutPlan(exercise5);
+        assertEquals(2, workoutPlan.armsWorkoutPlanSize());
+        workoutPlan.deleteArmsWorkoutPlan(exercise5);
+        assertEquals(1, workoutPlan.armsWorkoutPlanSize());
 
-        }
+    }
 
 
     @Test
     public void testDeleteBackWorkoutPlan() {
 
         workoutPlan.addBackWorkoutPlan(exercise2);
-        assertEquals(1,workoutPlan.backWorkoutPlanSize());
+        assertEquals(1, workoutPlan.backWorkoutPlanSize());
         workoutPlan.addBackWorkoutPlan(exercise4);
-        assertEquals(2,workoutPlan.backWorkoutPlanSize());
+        assertEquals(2, workoutPlan.backWorkoutPlanSize());
         workoutPlan.deleteBackWorkoutPlan(exercise4);
-        assertEquals(1,workoutPlan.backWorkoutPlanSize());
+        assertEquals(1, workoutPlan.backWorkoutPlanSize());
 
     }
 
@@ -105,9 +105,9 @@ public class WorkoutPlanTest {
     public void testDeleteChestWorkoutPlan() {
 
         workoutPlan.addChestWorkoutPlan(exercise1);
-        assertEquals(1,workoutPlan.chestWorkoutPlanSize());
+        assertEquals(1, workoutPlan.chestWorkoutPlanSize());
         workoutPlan.deleteChestWorkoutPlan(exercise1);
-        assertEquals(0,workoutPlan.chestWorkoutPlanSize());
+        assertEquals(0, workoutPlan.chestWorkoutPlanSize());
 
     }
 
@@ -116,34 +116,32 @@ public class WorkoutPlanTest {
 
         assertEquals(0, workoutPlan.legsWorkoutPlanSize());
         workoutPlan.addLegsWorkoutPlan(exercise6);
-        assertEquals(1,workoutPlan.legsWorkoutPlanSize());
+        assertEquals(1, workoutPlan.legsWorkoutPlanSize());
         workoutPlan.addLegsWorkoutPlan(exercise7);
-        assertEquals(2,workoutPlan.legsWorkoutPlanSize());
+        assertEquals(2, workoutPlan.legsWorkoutPlanSize());
         workoutPlan.deleteLegsWorkoutPlan(exercise6);
-        assertEquals(1,workoutPlan.legsWorkoutPlanSize());
+        assertEquals(1, workoutPlan.legsWorkoutPlanSize());
 
     }
 
 
+    @Test
 
+    public void testGetChestWorkoutPlan() {
 
-        @Test
+        workoutPlan.addChestWorkoutPlan(exercise1);
+        assertEquals(1, workoutPlan.getChestWorkoutPlan().size());
 
-        public void testGetChestWorkoutPlan() {
+    }
 
-            workoutPlan.addChestWorkoutPlan(exercise1);
-            assertEquals(1,workoutPlan.getChestWorkoutPlan().size());
+    @Test
 
-        }
+    public void testGetBackWorkoutPlan() {
 
-        @Test
+        workoutPlan.addBackWorkoutPlan(exercise2);
+        assertEquals(1, workoutPlan.getBackWorkoutPlan().size());
 
-        public void testGetBackWorkoutPlan() {
-
-            workoutPlan.addBackWorkoutPlan(exercise2);
-            assertEquals(1,workoutPlan.getBackWorkoutPlan().size());
-
-        }
+    }
 
     @Test
 
@@ -151,7 +149,7 @@ public class WorkoutPlanTest {
 
         workoutPlan.addLegsWorkoutPlan(exercise6);
         workoutPlan.addLegsWorkoutPlan(exercise7);
-        assertEquals(2,workoutPlan.getLegsWorkoutPlan().size());
+        assertEquals(2, workoutPlan.getLegsWorkoutPlan().size());
 
     }
 
@@ -161,7 +159,7 @@ public class WorkoutPlanTest {
 
         workoutPlan.addArmsWorkoutPlan(exercise3);
         workoutPlan.addArmsWorkoutPlan(exercise5);
-        assertEquals(2,workoutPlan.getArmsWorkoutPlan().size());
+        assertEquals(2, workoutPlan.getArmsWorkoutPlan().size());
 
     }
 
@@ -170,7 +168,7 @@ public class WorkoutPlanTest {
     public void testContainsChestWorkoutPlan() {
 
         workoutPlan.addChestWorkoutPlan(exercise1);
-        assertEquals(1,workoutPlan.chestWorkoutPlanSize());
+        assertEquals(1, workoutPlan.chestWorkoutPlanSize());
         assertTrue(workoutPlan.containChestExercise("Bench Press"));
         assertFalse(workoutPlan.containChestExercise("BENCH PRESS"));
 
@@ -181,9 +179,9 @@ public class WorkoutPlanTest {
     public void testContainsBackWorkoutPlan() {
 
         workoutPlan.addBackWorkoutPlan(exercise2);
-        assertEquals(1,workoutPlan.backWorkoutPlanSize());
+        assertEquals(1, workoutPlan.backWorkoutPlanSize());
         workoutPlan.addBackWorkoutPlan(exercise4);
-        assertEquals(2,workoutPlan.backWorkoutPlanSize());
+        assertEquals(2, workoutPlan.backWorkoutPlanSize());
         assertTrue(workoutPlan.containBackExercise("Dead lift"));
         assertFalse(workoutPlan.containBackExercise("Hammer Curl"));
 
@@ -194,9 +192,9 @@ public class WorkoutPlanTest {
     public void testContainsLegsWorkoutPlan() {
 
         workoutPlan.addLegsWorkoutPlan(exercise6);
-        assertEquals(1,workoutPlan.legsWorkoutPlanSize());
+        assertEquals(1, workoutPlan.legsWorkoutPlanSize());
         workoutPlan.addLegsWorkoutPlan(exercise7);
-        assertEquals(2,workoutPlan.legsWorkoutPlanSize());
+        assertEquals(2, workoutPlan.legsWorkoutPlanSize());
         assertTrue(workoutPlan.containLegsExercise("Leg Press"));
         assertFalse(workoutPlan.containLegsExercise("LEg Extension"));
 
@@ -207,11 +205,10 @@ public class WorkoutPlanTest {
     public void testContainsArmsWorkoutPlan() {
 
         workoutPlan.addArmsWorkoutPlan(exercise3);
-        assertEquals(1,workoutPlan.armsWorkoutPlanSize());
+        assertEquals(1, workoutPlan.armsWorkoutPlanSize());
         assertTrue(workoutPlan.containArmsExercise("Hammer Curl"));
 
     }
-
 
 
 }
