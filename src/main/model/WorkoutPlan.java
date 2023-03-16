@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,5 +151,60 @@ public class WorkoutPlan {
             }
         }
         return false;
+    }
+
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("BackWorkoutPlan", exerciseToJsonBackWorkout());
+        json.put("ChestWorkoutPlan", exerciseToJsonChestWorkout());
+        json.put("ArmsWorkoutPlan", exerciseToJsonArmsWorkout());
+        json.put("LegsWorkoutPlan", exerciseToJsonLegsWorkout());
+        return json;
+    }
+
+
+    //EFFECTS: returns the BackWorkoutPlan list as a JSON array
+    private JSONArray exerciseToJsonBackWorkout() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Exercise e : backWorkoutPlan) {
+            jsonArray.put(e.toJson());
+        }
+
+        return jsonArray;
+    }
+
+    //EFFECTS: returns the ChestWorkoutPLan list as a JSON array
+    private JSONArray exerciseToJsonChestWorkout() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Exercise e : chestWorkoutPlan) {
+            jsonArray.put(e.toJson());
+        }
+
+        return jsonArray;
+    }
+
+    //EFFECTS: returns the ArmsWorkoutPlan list as a JSON array
+    private JSONArray exerciseToJsonArmsWorkout() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Exercise e : armsWorkoutPlan) {
+            jsonArray.put(e.toJson());
+        }
+
+        return jsonArray;
+    }
+
+    //EFFECTS: returns the ArmsWorkoutPlan list as a JSON array
+    private JSONArray exerciseToJsonLegsWorkout() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Exercise e : legsWorkoutPlan) {
+            jsonArray.put(e.toJson());
+        }
+
+        return jsonArray;
     }
 }

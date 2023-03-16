@@ -1,0 +1,26 @@
+{
+    "ChestWorkoutPlan": [{
+        "sets": 10,
+        "muscleGroup": "Chest",
+        "title": "c",
+        "repetitions": 10
+    }],
+    "ArmsWorkoutPlan": [{
+        "sets": 10,
+        "muscleGroup": "Arms",
+        "title": "a",
+        "repetitions": 10
+    }],
+    "LegsWorkoutPlan": [{
+        "sets": 10,
+        "muscleGroup": "Legs",
+        "title": "l",
+        "repetitions": 10
+    }],
+    "BackWorkoutPlan": [{
+        "sets": 10,
+        "muscleGroup": "Back",
+        "title": "b",
+        "repetitions": 10
+    }]
+}

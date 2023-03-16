@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 public class Exercise {
     private String title;
     private String muscleGroup;
@@ -36,4 +38,18 @@ public class Exercise {
     public int getRepetitions() {
         return this.repetitions;
     }
+
+
+
+
+    //EFFECTS: make the Json object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("title", title);
+        json.put("muscleGroup", muscleGroup);
+        json.put("sets", sets);
+        json.put("repetitions", repetitions);
+        return json;
+    }
+
 }

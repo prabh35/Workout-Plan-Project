@@ -2,17 +2,28 @@ package ui;
 
 import model.Exercise;
 import model.WorkoutPlan;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class WorkoutPlanUI {
     private WorkoutPlan workoutPlan;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+    private static final String JSON_STORE = "./data/workout.json";
+
+
 
     //EFFECTS: run the tracker application
     public WorkoutPlanUI() {
         workoutPlan = new WorkoutPlan();
         input = new Scanner(System.in);
+        jsonReader = new JsonReader(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE);
         start();
         startTracker();
     }
@@ -66,6 +77,10 @@ public class WorkoutPlanUI {
             deleteLegsWorkoutPlan();
         } else if (command.equals("vl")) {
             viewLegsWorkoutPlan();
+        } else if (command.equals("sw")) {
+            saveWorkoutPlan();
+        } else if (command.equals("lw")) {
+            loadWorkoutPlan();
         } else {
             System.out.println("Invalid Selection....");
             startTracker();
@@ -87,6 +102,8 @@ public class WorkoutPlanUI {
         System.out.println("\tvb -> View Back Workout");
         System.out.println("\tvl -> View Legs Workout");
         System.out.println("\tva -> View Arms Workout");
+        System.out.println("\tsw -> Save Workout Plan");
+        System.out.println("\tlw -> Load Workout Plan");
         System.out.println("\te -> Exit");
     }
 
@@ -373,6 +390,29 @@ public class WorkoutPlanUI {
         }
 
         startTracker();
+    }
+
+    private void saveWorkoutPlan() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(workoutPlan);
+            jsonWriter.close();
+            System.out.println("Saved !");
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE + "!");
+        }
+        startTracker();
+    }
+
+    private void loadWorkoutPlan() {
+        try {
+            workoutPlan = jsonReader.read();
+            System.out.println("Loaded !");
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE + "!");
+        }
+        startTracker();
+
     }
 
 

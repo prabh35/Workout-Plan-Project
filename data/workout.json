@@ -1,0 +1,16 @@
+{
+    "ChestWorkoutPlan": [],
+    "ArmsWorkoutPlan": [{
+        "sets": 3,
+        "muscleGroup": "Arms",
+        "title": "BAaju",
+        "repetitions": 10
+    }],
+    "LegsWorkoutPlan": [],
+    "BackWorkoutPlan": [{
+        "sets": 3,
+        "muscleGroup": "Back",
+        "title": "Pith",
+        "repetitions": 10
+    }]
+}
