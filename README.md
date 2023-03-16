@@ -25,3 +25,5 @@ My mother always asked me to get the groceries from the nearby grocery store and
 - As a user, I want to *remove* an **Exercise** to the workout plan
 - As a user, I want to *create* an **Exercise**
 - As u user, I want to be able to *view* the different workout plans.
+- As u user, I want to be able to *save* the different workout plans.
+- As u user, I want to be able to *load* the different workout plans.

@@ -1,16 +1,19 @@
 {
-    "ChestWorkoutPlan": [],
-    "ArmsWorkoutPlan": [{
-        "sets": 3,
-        "muscleGroup": "Arms",
-        "title": "BAaju",
-        "repetitions": 10
-    }],
+    "ChestWorkoutPlan": [
+        {
+            "sets": 3,
+            "muscleGroup": "Chest",
+            "title": "c",
+            "repetitions": 4
+        },
+        {
+            "sets": 3,
+            "muscleGroup": "Chest",
+            "title": "c",
+            "repetitions": 4
+        }
+    ],
+    "ArmsWorkoutPlan": [],
     "LegsWorkoutPlan": [],
-    "BackWorkoutPlan": [{
-        "sets": 3,
-        "muscleGroup": "Back",
-        "title": "Pith",
-        "repetitions": 10
-    }]
+    "BackWorkoutPlan": []
 }

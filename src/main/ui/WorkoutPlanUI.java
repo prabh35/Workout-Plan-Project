@@ -104,7 +104,6 @@ public class WorkoutPlanUI {
         System.out.println("\tva -> View Arms Workout");
         System.out.println("\tsw -> Save Workout Plan");
         System.out.println("\tlw -> Load Workout Plan");
-        System.out.println("\te -> Exit");
     }
 
     // MODIFIES: this
@@ -397,7 +396,7 @@ public class WorkoutPlanUI {
             jsonWriter.open();
             jsonWriter.write(workoutPlan);
             jsonWriter.close();
-            System.out.println("Saved !");
+            System.out.println("Saved the workout plan !!");
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE + "!");
         }
@@ -407,7 +406,7 @@ public class WorkoutPlanUI {
     private void loadWorkoutPlan() {
         try {
             workoutPlan = jsonReader.read();
-            System.out.println("Loaded !");
+            System.out.println("Loaded the workout plan !!");
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE + "!");
         }
