@@ -1,6 +1,8 @@
 package ui;
 
 
+import model.Event;
+import model.EventLog;
 import model.Exercise;
 import model.WorkoutPlan;
 import persistence.JsonReader;
@@ -652,6 +654,7 @@ public class WorkoutPlanGUI implements ActionListener {
             jsonWriter.close();
 
             System.out.println("Saved " + workoutPlan + " to " + JSON_STORE);
+            EventLog.getInstance().logEvent(new Event("Workout Plan saved !!"));
 
         } catch (FileNotFoundException e) {
 
@@ -666,6 +669,7 @@ public class WorkoutPlanGUI implements ActionListener {
             workoutPlan = jsonReader.read();
 
             System.out.println("Loaded " + workoutPlan + " from " + JSON_STORE);
+            EventLog.getInstance().logEvent(new Event("Workout Plan loaded !!"));
 
         } catch (IOException e) {
 
@@ -737,12 +741,21 @@ public class WorkoutPlanGUI implements ActionListener {
     //EFFECTS: prints logged  when program exited
     public void jframeWindowListener() {
         jframe.addWindowListener(new WindowAdapter() {
+
             public void windowClosing(WindowEvent e) {
+                logPrint(EventLog.getInstance());
                 System.exit(0);
 
             }
-        });
 
+        });
+    }
+
+    //EFFECTS: prints events logged
+    private void logPrint(EventLog instance) {
+        for (Event next : instance) {
+            System.out.println(next.toString());
+        }
     }
 
 

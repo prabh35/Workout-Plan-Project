@@ -1,18 +1,5 @@
 {
-    "ChestWorkoutPlan": [
-        {
-            "sets": 3,
-            "muscleGroup": "Chest",
-            "title": "c",
-            "repetitions": 4
-        },
-        {
-            "sets": 3,
-            "muscleGroup": "Chest",
-            "title": "c",
-            "repetitions": 4
-        }
-    ],
+    "ChestWorkoutPlan": [],
     "ArmsWorkoutPlan": [],
     "LegsWorkoutPlan": [],
     "BackWorkoutPlan": []

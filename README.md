@@ -27,3 +27,21 @@ My mother always asked me to get the groceries from the nearby grocery store and
 - As u user, I want to be able to *view* the different workout plans.
 - As u user, I want to be able to *save* the different workout plans.
 - As u user, I want to be able to *load* the different workout plans.
+
+
+**Phase 4**
+
+I would like to add exception handling in my project. As of now, the muscleGroup can only have designated names such as "Chest" for ChestWorkoutPlan.
+
+Wed Apr 12 20:12:46 PDT 2023
+BackWorkoutPlan is successfully added !!
+Wed Apr 12 20:13:01 PDT 2023
+ArmsWorkoutPlan is successfully added !!
+Wed Apr 12 20:13:15 PDT 2023
+Workout Plan saved !!
+Wed Apr 12 20:13:19 PDT 2023
+BackWorkoutPlan is successfully added !!
+Wed Apr 12 20:13:19 PDT 2023
+ArmsWorkoutPlan is successfully added !!
+Wed Apr 12 20:13:19 PDT 2023
+Workout Plan loaded !!

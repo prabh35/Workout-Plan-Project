@@ -2,11 +2,12 @@ package model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import persistence.Writable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WorkoutPlan {
+public class WorkoutPlan implements Writable {
 
 
     private List<Exercise> backWorkoutPlan;
@@ -27,6 +28,7 @@ public class WorkoutPlan {
         if (exercise.getMuscleGroup().equals("Back")) {
             backWorkoutPlan.add(exercise);
         }
+        EventLog.getInstance().logEvent(new Event("BackWorkoutPlan is successfully added !!"));
     }
 
 
@@ -34,6 +36,7 @@ public class WorkoutPlan {
         if (exercise.getMuscleGroup().equals("Chest")) {
             chestWorkoutPlan.add(exercise);
         }
+        EventLog.getInstance().logEvent(new Event("ChestWorkoutPlan is successfully added !!"));
     }
 
 
@@ -41,22 +44,27 @@ public class WorkoutPlan {
         if (exercise.getMuscleGroup().equals("Arms")) {
             armsWorkoutPlan.add(exercise);
         }
+        EventLog.getInstance().logEvent(new Event("ArmsWorkoutPlan is successfully added !!"));
     }
 
     public void addLegsWorkoutPlan(Exercise exercise) {
         if (exercise.getMuscleGroup().equals("Legs")) {
             legsWorkoutPlan.add(exercise);
         }
+        EventLog.getInstance().logEvent(new Event("LegsWorkoutPlan is successfully added !!"));
     }
 
 
     public void deleteBackWorkoutPlan(Exercise exercise) {
         backWorkoutPlan.remove(exercise);
+        EventLog.getInstance().logEvent(new Event("BackWorkoutPlan is successfully deleted !!"));
     }
 
 
     public void deleteChestWorkoutPlan(Exercise exercise) {
         chestWorkoutPlan.remove(exercise);
+
+        EventLog.getInstance().logEvent(new Event("ChestWorkoutPlan is successfully deleted !!"));
 
     }
 
@@ -64,11 +72,15 @@ public class WorkoutPlan {
     public void deleteLegsWorkoutPlan(Exercise exercise) {
         legsWorkoutPlan.remove(exercise);
 
+        EventLog.getInstance().logEvent(new Event("LegsWorkoutPlan is successfully deleted !!"));
+
     }
 
 
     public void deleteArmsWorkoutPlan(Exercise exercise) {
         armsWorkoutPlan.remove(exercise);
+
+        EventLog.getInstance().logEvent(new Event("ArmsWorkoutPlan is successfully deleted !!"));
 
     }
 
@@ -153,7 +165,7 @@ public class WorkoutPlan {
         return false;
     }
 
-
+    @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("BackWorkoutPlan", exerciseToJsonBackWorkout());
